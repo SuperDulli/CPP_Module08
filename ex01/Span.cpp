@@ -1,3 +1,5 @@
+#include <iostream>
+#include <algorithm>
 #include "Span.hpp"
 
 char const* Span::NoSpaceLeftException::what(void) const throw() {
@@ -45,11 +47,15 @@ unsigned int Span::shortestSpan(void) const throw(Span::NoSpanPossibleException)
 	copy.sort();
 
 	unsigned int min = std::numeric_limits<unsigned int>::max();
-	for (std::list<int>::const_iterator it = copy.begin(); it != --copy.end();)
+	std::list<int>::const_iterator it = copy.begin();
+	std::list<int>::const_iterator it_next = ++copy.begin();
+	while (it_next != copy.end())
 	{
-		unsigned int const d = getDistance(*it, *++it);
+		unsigned int const d = getDistance(*it, *it_next);
 		if (d == 0) return 0;
 		if (d < min) min = d;
+		++it;
+		++it_next;
 	}
 	return min;
 }

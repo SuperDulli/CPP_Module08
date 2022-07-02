@@ -1,8 +1,9 @@
-#include <stdlib.h> // rand
+#include <cstdlib> // rand
 #include <iostream>
 #include <string>
 #include <vector>
 #include <limits>
+#include <algorithm>
 #include "displayContainer.hpp"
 #include "Color.hpp"
 #include "Span.hpp"
@@ -16,6 +17,7 @@ void handleException(std::exception& e) {
 }
 
 int main(void) {
+srand(time(NULL));
 {
 	std::cout << "Test from the subject:" << std::endl;
 	Span sp(5);
@@ -107,7 +109,7 @@ std::cout << std::string(80, '-') << std::endl;
 	std::cout << large.shortestSpan() << std::endl;
 }
 {
-	unsigned int const N = 100000;
+	unsigned int const N = 1000000;
 	std::cout << "Test with " << N << " random numbers:" << std::endl;
 	std::vector<int> vec(N);
 	std::generate(vec.begin(), vec.end(), rand);
@@ -118,8 +120,5 @@ std::cout << std::string(80, '-') << std::endl;
 	std::cout << large.largestSpan() << std::endl;
 	std::cout << large.shortestSpan() << std::endl;
 }
-
-	
-	
 return 0;
 }
