@@ -9,6 +9,7 @@ void displayContainer(C const& container) {
 	while (it != container.end()) {
 		std::cout << *it++ << " ";
 	}
+	std::cout << std::endl;
 }
 
 #endif
