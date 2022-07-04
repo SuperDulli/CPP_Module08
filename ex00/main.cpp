@@ -4,22 +4,9 @@
 #include "displayContainer.hpp"
 #include "easyfind.hpp"
 
-// void easyfindArray(std::array<int,5> const& arr, int val) {
-// 	std::cout << val << " in intArr?: "; // << std::endl;
-
-// 	std::array<int, 5>::const_iterator it = NULL;
-
-// 	it = easyfind(arr, val);
-// 	if (it != arr.end())
-//     	std::cout << "Element found in intArr: " << *it << std::endl;
-//   	else
-//     	std::cout << "Element not found in intArr" << std::endl;
-// }
-
 int main(void) {
 	int intergers[] = {1, 2, 3, 4, 5};
 
-	// std::vector<int> const intVec(intergers, intergers + sizeof(intergers) / sizeof(int));
 	std::vector<int> intVec(2, 0); // 5 ints with value 0
 	for (size_t i = 0; i < sizeof(intergers) / sizeof(int); i++)
 	{
