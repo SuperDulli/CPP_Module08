@@ -27,7 +27,7 @@ public:
 
 	void addNumber(int number) throw(Span::NoSpaceLeftException);
 
-	template<class InputIterator>
+	template<typename InputIterator>
 	void addNumber(InputIterator first, InputIterator last) throw(Span::NoSpaceLeftException) {
 		for (; first != last ; ++first)
 		{
